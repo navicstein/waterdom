@@ -1,0 +1,49 @@
+{
+  "name": "waterdom",
+  "version": "1.0.1",
+  "main": "dist/waterdom.cjs.js",
+  "module": "dist/waterdom.esm.js",
+  "browser": "dist/waterdom.umd.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algolia/waterdom"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.8.0",
+    "concurrently": "4.1.0",
+    "jest": "24.8.0",
+    "rollup": "1.12.3",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "10.0.0",
+    "rollup-plugin-node-resolve": "5.0.0",
+    "serve": "11.0.0"
+  },
+  "scripts": {
+    "prepare": "pnpm build",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test": "jest && yarn build"
+  },
+  "renovate": {
+    "extends": [
+      "config:js-lib"
+    ],
+    "automerge": true,
+    "major": {
+      "automerge": false
+    },
+    "automergeType": "branch"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "localforage": "^1.7.3",
+    "reactive-localstorage": "^0.1.0-beta.1",
+    "rxjs": "^6.5.2"
+  }
+}
